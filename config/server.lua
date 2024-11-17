@@ -12,8 +12,8 @@ return {
     },
 
     player = {
-        hungerRate = 4.2, -- Rate at which hunger goes down.
-        thirstRate = 3.8, -- Rate at which thirst goes down.
+        hungerRate = 3, -- Rate at which hunger goes down.
+        thirstRate = 2, -- Rate at which thirst goes down.
 
         ---@enum BloodType
         bloodTypes = {
@@ -68,15 +68,6 @@ return {
         {'player_vehicles', 'citizenid'},
         {'player_groups', 'citizenid'},
         {'players', 'citizenid'},
-        {'npwd_calls', 'identifier'},
-        {'npwd_darkchat_channel_members', 'user_identifier'},
-        {'npwd_marketplace_listings', 'identifier'},
-        {'npwd_messages_participants', 'participant'},
-        {'npwd_notes', 'identifier'},
-        {'npwd_phone_contacts', 'identifier'},
-        {'npwd_phone_gallery', 'identifier'},
-        {'npwd_twitter_profiles', 'identifier'},
-        {'npwd_match_profiles', 'identifier'},
     }, -- Rows to be deleted when the character is deleted
 
     server = {
@@ -85,7 +76,7 @@ return {
         closedReason = 'Server Closed', -- Reason message to display when people can't join the server
         whitelist = false, -- Enable or disable whitelist on the server
         whitelistPermission = 'admin', -- Permission that's able to enter the server when the whitelist is on
-        discord = '', -- Discord invite link
+        discord = 'discord.gg/Hgrqu2jaGq', -- Discord invite link
         checkDuplicateLicense = true, -- Check for duplicate rockstar license on join
         ---@deprecated use cfg ACE system instead
         permissions = { 'god', 'admin', 'mod' }, -- Add as many groups as you want here after creating them in your server.cfg
@@ -96,19 +87,21 @@ return {
             ['license2:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'] = 5,
         },
 
-        defaultNumberOfCharacters = 3, -- Define maximum amount of default characters (maximum 3 characters defined by default)
+        defaultNumberOfCharacters = 5, -- Define maximum amount of default characters (maximum 3 characters defined by default)
     },
 
     -- this configuration is for core events only. putting other webhooks here will have no effect
     logging = {
         webhook = {
-            ['default'] = nil, -- default
-            ['joinleave'] = nil, -- default
-            ['ooc'] = nil, -- default
-            ['anticheat'] = nil, -- default
-            ['playermoney'] = nil, -- default
+            ['default'] = 'https://discord.com/api/webhooks/1278208316799062036/bKzVA9V60C4Ug_rL5tK40AiakwHgzAvrovx5nwvrsXmfDfWYpvPTahu1zTLpJlLQw8EW', -- default
+            ['joinleave'] = 'https://discord.com/api/webhooks/1278208316799062036/bKzVA9V60C4Ug_rL5tK40AiakwHgzAvrovx5nwvrsXmfDfWYpvPTahu1zTLpJlLQw8EW', -- default
+            ['ooc'] = 'https://discord.com/api/webhooks/1278208316799062036/bKzVA9V60C4Ug_rL5tK40AiakwHgzAvrovx5nwvrsXmfDfWYpvPTahu1zTLpJlLQw8EW', -- default
+            ['anticheat'] = 'https://discord.com/api/webhooks/1278208316799062036/bKzVA9V60C4Ug_rL5tK40AiakwHgzAvrovx5nwvrsXmfDfWYpvPTahu1zTLpJlLQw8EW', -- default
+            ['playermoney'] = 'https://discord.com/api/webhooks/1278208316799062036/bKzVA9V60C4Ug_rL5tK40AiakwHgzAvrovx5nwvrsXmfDfWYpvPTahu1zTLpJlLQw8EW', -- default
         },
-        role = {} -- Role to tag for high priority logs. Roles use <@%roleid> and users/channels are <@userid/channelid>
+        role = {
+            '<@1289382274407600229>',
+        } -- Role to tag for high priority logs. Roles use <@%roleid> and users/channels are <@userid/channelid>
     },
 
     giveVehicleKeys = function(src, plate, vehicle)
